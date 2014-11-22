@@ -4,8 +4,8 @@ var mongoose = require("mongoose");
 mongoose.connect();
 
 mongoose.model("Device", {
-	id: String,
-	type: Number,
+	device_id: String,
+	device_type: Number, // 0 for iOS, 1 for Android
 
 	watches: [mongoose.Schema.Types.ObjectId]
 });
@@ -14,5 +14,5 @@ mongoose.model("Page", {
 	url: String,
 	lastHash: String,
 
-	watchers: Number
+	watchers: {type: Number, default: 0}
 });

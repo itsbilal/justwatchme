@@ -1,7 +1,7 @@
 
 var mongoose = require("mongoose");
 
-mongoose.connect();
+mongoose.connect('mongodb://localhost/justwatchme');
 
 mongoose.model("Device", {
 	device_id: String,

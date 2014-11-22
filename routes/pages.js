@@ -17,7 +17,7 @@ router.post("/add/", function(req, res) {
 		watchers: 0
 	});
 
-	pageHash(url, function(err, hash){
+	pageHash(req.body.url, function(err, hash){
 
 		if (err) {
 			res.status(500).send({
@@ -26,7 +26,7 @@ router.post("/add/", function(req, res) {
 
 			return;
 		}
-		
+
 		page.lastHash = hash;
 		page.save(function(err, page){
 			if (!err) {
